@@ -10,7 +10,7 @@ source activate python
 unset PROJ_LIB
 
 mkdir output
-
+pip install geedim
 # FILENAMELIST=$(ls -d input/*)
 
 basedir=$( cd "$(dirname "$0")" ; pwd -P )  # goes to alg_3-1-5/
