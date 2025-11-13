@@ -1,0 +1,9 @@
+name: python
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - importlib_resources
+  - geedim
+  - cachetools
+  - h5netcdf
