@@ -1,0 +1,48 @@
+algorithm_description: Download tiles of an open asset from Google Earth Engine
+algorithm_name: run_download_gee_tiles
+algorithm_version: download_gee_tiles_v1
+build_command: maap_tools/dps/build_command_4.1.0.sh
+disk_space: 8GB
+docker_container_url: mas.maap-project.org/root/maap-workspaces/base_images/python:v4.1.0
+inputs:
+  config: []
+  positional:
+  - default: ''
+    description: 'GEE service account email (e.g., "my-service-account@my-project.iam.gserviceaccount.com")'
+    name: gee_account
+    required: true
+  - default: ''
+    description: 'Path to GEE service account JSON key file'
+    name: gee_key
+    required: true
+  - default: ''
+    description: 'Path to GEE asset (e.g., "users/username/asset")'
+    name: asset_path
+    required: true
+  - default: ''
+    description: 'Asset type identifier for output filename'
+    name: asset_type
+    required: true
+  - default: ''
+    description: 'Year for filtering and filename' 
+    name: year
+    required: true
+  - default: '15'
+    description: 'Scale in meters for download' 
+    name: scale
+    required: true
+  - default: ''
+    description: 'Path to CSV file with tile index (must have tile_num column and geometry)' 
+    name: tiles_csv
+    required: true
+  - default: ''
+    description: 'Comma-separated list of tile numbers to process (optional)' 
+    name: tile_list
+    required: true
+  - default: ''
+    description: 'Resampling method (default: near)' 
+    name: resampling
+    required: true
+queue: maap-dps-worker-8gb
+repository_url: https://github.com/pahbs/maap_tools.git
+run_command: maap_tools/dps/alg_download_gee_tiles/run.sh
