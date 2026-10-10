@@ -63,69 +63,74 @@
 
 <style>
   body { margin: 0; padding: 0; }
-  /* Folium map container — override fixed width/height */
-  .folium-map {
+  .folium-map, div[id^="map_"] {
     width: 100% !important;
-    height: 45vh !important;
+    height: 60vh !important;
     max-width: 100% !important;
-  }
-  /* If folium wraps the map in a Figure div, also stretch it */
-  div[id^="map_"] {
-    width: 100% !important;
-    height: 45vh !important;
   }
 </style>
 
 
-<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            max-width: 1600px; margin: 0 auto; padding: 24px 32px;">
-  <h1 style="margin-bottom: 8px;">
-    Circumpolar taiga–tundra ecotone &amp; boreal forest structure
-  </h1>
-  <h3 style="margin-top: 0; color: #555; font-weight: normal;">
-    NASA ABoVE Boreal Biomass Mapping Project
-  </h3>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            max-width: 1400px; margin: 0 auto; padding: 24px 32px; background-color: #ffffff;
+            border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); color: #1a202c;">
 
-  <div style="display:flex; gap:24px; align-items:flex-start; margin: 16px 0 24px 0;">
-    <img src="tte_thumbnail.png" width="240"
-         style="border:1px solid #ccc; border-radius:4px; flex-shrink:0;">
-    <div style="font-size: 14px; line-height: 1.5; color: #333;">
-      <p>
-        Interactive map of two products from separate efforts:
-      </p>
-      <ul>
-        <li><b>Taiga–tundra ecotone (TTE) classification, circa 2010</b> — 11-class forest structure
-            pattern map (Montesano et al. 2020,
-            <a href="https://doi.org/10.1088/1748-9326/abb2c7" target="_blank">
-              doi:10.1088/1748-9326/abb2c7</a>). *Requires zoom-in for proper display at native 30m scale.*</li>
-        <li><b>Aboveground biomass (AGB) density trends, 2016–2025</b> — annual rate of change
-            (Mg/ha/yr) derived from a multi-year OLS fit, displayed with the PiYG diverging palette. *Note yet complete for circumpolar domain.*</li>
-      </ul>
-      <p>
-        Use the layer-control panel (top right) to toggle between products, and the legend
-        (bottom left) for class definitions. Click the fullscreen button for an expanded view.
-      </p>
+  <header style="margin-bottom: 18px;">
+    <h1 style="margin: 0 0 4px 0; font-size: 24px; font-weight: 700; color: #111827; letter-spacing: -0.02em;">Circumpolar Taiga&ndash;Tundra Ecotone &amp; Boreal Forest Structure</h1>
+    <h3 style="margin: 0; font-size: 14.5px; font-weight: 500; color: #4b5563;">NASA Arctic/Boreal Vulnerability Experiment (ABoVE)</h3>
+  </header>
+
+  <section style="margin-bottom: 16px; overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13.5px; text-align: left;">
+      <thead>
+        <tr style="border-bottom: 2px solid #e5e7eb; color: #374151; font-weight: 600;">
+          <th style="padding: 8px 12px; width: 26%;">Dataset / Layer</th>
+          <th style="padding: 8px 12px; width: 14%;">Resolution</th>
+          <th style="padding: 8px 12px; width: 38%;">Description &amp; Display</th>
+          <th style="padding: 8px 12px; width: 22%;">Citation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 10px 12px; vertical-align: top; font-weight: 600; color: #111827;">AGB trend (OLS), 2016&ndash;2025 (v3.1)</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">30&thinsp;m</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">Per-pixel OLS slope of annual v3.1 aboveground biomass density (Mg/ha/yr), shown from &minus;2 to +2. Not yet complete across the circumpolar domain.</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #6b7280;">AGB model: Duncanson et al. (2026) [2]</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 10px 12px; vertical-align: top; font-weight: 600; color: #111827;">Taiga&ndash;tundra ecotone (TTE) classification, c.&nbsp;2010</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">30&thinsp;m static</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">11-class map of forest structure patterns across the taiga&ndash;tundra ecotone. Class definitions in the legend (top left).</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #6b7280;">Montesano et al. (2020) [1]</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <p style="margin: 0 0 16px 0; padding: 9px 12px; background-color: #f8fafc; border-left: 3px solid #3b82f6; border-radius: 0 4px 4px 0; font-size: 13px; color: #475569;">
+    Use the layer-control panel (top right) to toggle layers and basemaps; the legend (top left) lists the TTE classes. Zoom in to view the 30&thinsp;m patterns.
+  </p>
+
+  <section style="font-size: 11.5px; line-height: 1.5; color: #6b7280; border-top: 1px solid #f3f4f6; padding-top: 10px; margin-bottom: 14px;">
+    <div style="font-weight: 600; color: #4b5563; margin-bottom: 4px; text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.05em;">
+      References &amp; Circumpolar Context
     </div>
-  </div>
-    <table style="border-collapse: collapse; margin: 16px 0 24px 0; font-size: 13px;">
-    <thead>
-      <tr style="background:#f2f2f2;">
-        <th style="border:1px solid #ccc; padding:6px 12px; text-align:left;">Author</th>
-        <th style="border:1px solid #ccc; padding:6px 12px; text-align:left;">Affiliation</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="border:1px solid #ccc; padding:6px 12px;">Paul Montesano, PhD</td>
-        <td style="border:1px solid #ccc; padding:6px 12px;">NASA Goddard Space Flight Center / Earth System Science Interdisciplinary Center, U. Maryland-College Park</td>
-      </tr>
-    </tbody>
-  </table>
+    <ul style="margin: 0; padding-left: 18px;">
+      <li>[1] Montesano et al. (2020). <em>Environmental Research Letters</em>. <a href="https://doi.org/10.1088/1748-9326/abb2c7" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: none;">doi:10.1088/1748-9326/abb2c7</a></li>
+      <li>[2] Duncanson et al. (2026). <em>Remote Sensing of Environment</em>. <a href="https://doi.org/10.1016/j.rse.2026.115406" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: none;">doi:10.1016/j.rse.2026.115406</a></li>
+    </ul>
+  </section>
+
+  <footer style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
+                 padding-top: 10px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">
+    <span style="display: inline-flex; align-items: center; background-color: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 9999px; font-weight: 500; font-size: 11px;">Work in progress</span>
+    <span><strong style="color: #374151;">Contact:</strong>
+      <a href="mailto:paul.m.montesano@nasa.gov" style="color: #2563eb; text-decoration: none;">paul.m.montesano@nasa.gov</a></span>
+    <span><strong style="color: #374151;">Last updated:</strong> 2026-10-10 19:52 UTC</span>
+  </footer>
 </div>
 
-    
-    
-            <div class="folium-map" id="map_8e0e6b3bfab58a3ba0d1ac29589c8678" ></div>
+<div class="folium-map" id="map_8e0e6b3bfab58a3ba0d1ac29589c8678" ></div>
         
 </body>
 <script>
@@ -223,7 +228,6 @@
             );
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             var tile_layer_f636147170a86259536d52efb2b11f28 = L.tileLayer(
@@ -232,7 +236,6 @@
             );
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             var tile_layer_f3574b55254333e01ab77ee954d6f1dd = L.tileLayer(
@@ -241,7 +244,6 @@
             );
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             var tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60 = L.tileLayer(
@@ -259,7 +261,6 @@
             );
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
         function geo_json_47e5f30822a8d22ac2196a28feebb785_styler(feature) {
@@ -414,19 +415,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -441,19 +438,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -468,19 +461,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -495,19 +484,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -522,19 +507,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -549,19 +530,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -576,19 +553,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -603,19 +576,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -630,19 +599,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -657,19 +622,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -684,19 +645,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -711,19 +668,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -738,19 +691,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -765,19 +714,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -792,19 +737,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -819,19 +760,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -846,19 +783,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -873,19 +806,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -900,19 +829,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -927,19 +852,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -954,19 +875,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -981,19 +898,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
@@ -1008,19 +921,15 @@
             tile_layer_95f39519955ba78e7191f34727a30355.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_2d8e02b8c84075fa699122d1bcb58fa9.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f636147170a86259536d52efb2b11f28.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_f3574b55254333e01ab77ee954d6f1dd.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             tile_layer_d6edf4fc9201d23e3cbe5c4dcdabbb60.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
-            tile_layer_1285487d458f8ff64b72bf48f1917dfc.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);
         
     
             geo_json_47e5f30822a8d22ac2196a28feebb785.addTo(map_8e0e6b3bfab58a3ba0d1ac29589c8678);

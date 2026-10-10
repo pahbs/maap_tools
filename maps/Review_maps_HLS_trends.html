@@ -63,67 +63,97 @@
 
 <style>
   body { margin: 0; padding: 0; }
-  /* Folium map container — override fixed width/height */
-  .folium-map {
+  .folium-map, div[id^="map_"] {
     width: 100% !important;
-    height: 45vh !important;
+    height: 60vh !important;
     max-width: 100% !important;
-  }
-  /* If folium wraps the map in a Figure div, also stretch it */
-  div[id^="map_"] {
-    width: 100% !important;
-    height: 45vh !important;
   }
 </style>
 
 
-<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            max-width: 1600px; margin: 0 auto; padding: 24px 32px;">
-  <h1 style="margin-bottom: 8px;">
-    Circumpolar boreal forest structure maps
-  </h1>
-  <h3 style="margin-top: 0; color: #555; font-weight: normal;">
-    NASA HLS Circumpolar NDVI Trends Assessment
-  </h3>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            max-width: 1400px; margin: 0 auto; padding: 24px 32px; background-color: #ffffff;
+            border-radius: 8px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); color: #1a202c;">
 
-  <div style="display:flex; gap:24px; align-items:flex-start; margin: 16px 0 24px 0;">
-    <img src="thumbnail_nasa.png" width="240"
-         style="border:1px solid #ccc; border-radius:4px; flex-shrink:0;">
-    <div style="font-size: 14px; line-height: 1.5; color: #333;">
-      <p>
-        Interactive maps:
-      </p>
-      <ul>
-        <li><b>NDVI trends (2015-2025)</b> — linear trends in max NDVI</li>
-      </ul>
-            <ul>
-        <li><b>Misc forest structure datasets</b> — tree cover and AGB density trends, 2020 forest age & carbon accumulation</li>
-      </ul>
-      <p>
-        Use the layer-control panel (top right) to toggle between products, and the legend
-        (bottom left) for class definitions. Click the fullscreen button for an expanded view.
-      </p>
+  <header style="margin-bottom: 18px;">
+    <h1 style="margin: 0 0 4px 0; font-size: 24px; font-weight: 700; color: #111827; letter-spacing: -0.02em;">Circumpolar Boreal Forest Structure Maps</h1>
+    <h3 style="margin: 0; font-size: 14.5px; font-weight: 500; color: #4b5563;">NASA HLS Circumpolar NDVI Trends Assessment</h3>
+  </header>
+
+  <section style="margin-bottom: 16px; overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13.5px; text-align: left;">
+      <thead>
+        <tr style="border-bottom: 2px solid #e5e7eb; color: #374151; font-weight: 600;">
+          <th style="padding: 8px 12px; width: 26%;">Dataset / Layer</th>
+          <th style="padding: 8px 12px; width: 14%;">Resolution</th>
+          <th style="padding: 8px 12px; width: 38%;">Description &amp; Display</th>
+          <th style="padding: 8px 12px; width: 22%;">Citation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 10px 12px; vertical-align: top; font-weight: 600; color: #111827;">Tree canopy cover trend, 1984&ndash;2020</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">30&thinsp;m</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">Trend in annual tree canopy cover from the TerraPulse Landsat time series, shown from &minus;2 to +2.</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #6b7280;">TerraPulse</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 10px 12px; vertical-align: top; font-weight: 600; color: #111827;">Forest age, 2020</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">30&thinsp;m</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">Ensemble mean stand age (yr), updated with TerraPulse and GAMI v2.0; shown from 1 to 250&thinsp;yr.</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #6b7280;">&mdash;</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 10px 12px; vertical-align: top; font-weight: 600; color: #111827;">Carbon accumulation, 2020 (v3)</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">30&thinsp;m</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">Carbon accumulation rate (MgC/ha/yr), shown from 0 to 1.</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #6b7280;">&mdash;</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 10px 12px; vertical-align: top; font-weight: 600; color: #111827;">AGB trend (OLS), 2016&ndash;2025 (v3.1)</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">30&thinsp;m</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">Per-pixel OLS slope of annual v3.1 aboveground biomass density (Mg/ha/yr), shown from &minus;2 to +2. Not yet complete across the circumpolar domain.</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #6b7280;">AGB model: Duncanson et al. (2026) [1]</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 10px 12px; vertical-align: top; font-weight: 600; color: #111827;">AGB trend classes, 2016&ndash;2025 (v3.1)</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">30&thinsp;m</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">Mann&ndash;Kendall trend classes (&alpha;&thinsp;=&thinsp;0.05): 1&ndash;4 significant increases (strong to very weak), 5&ndash;6 non-significant (positive, negative), 7&ndash;10 significant decreases (very weak to strong).</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #6b7280;">AGB model: Duncanson et al. (2026) [1]</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 10px 12px; vertical-align: top; font-weight: 600; color: #111827;">NDVI trend from HLS</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">30&thinsp;m</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #4b5563;">Per-pixel slope of NDVI from Harmonized Landsat Sentinel-2 (HLS), shown from &minus;0.02 to +0.02. Alaska only (west of 129&deg;W).</td>
+          <td style="padding: 10px 12px; vertical-align: top; color: #6b7280;">&mdash;</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <p style="margin: 0 0 16px 0; padding: 9px 12px; background-color: #f8fafc; border-left: 3px solid #3b82f6; border-radius: 0 4px 4px 0; font-size: 13px; color: #475569;">
+    Use the layer-control panel (top right) to toggle layers and basemaps; click anywhere on the map to query pixel values.
+  </p>
+
+  <section style="font-size: 11.5px; line-height: 1.5; color: #6b7280; border-top: 1px solid #f3f4f6; padding-top: 10px; margin-bottom: 14px;">
+    <div style="font-weight: 600; color: #4b5563; margin-bottom: 4px; text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.05em;">
+      References &amp; Circumpolar Context
     </div>
-  </div>
-    <table style="border-collapse: collapse; margin: 16px 0 24px 0; font-size: 13px;">
-    <thead>
-      <tr style="background:#f2f2f2;">
-        <th style="border:1px solid #ccc; padding:6px 12px; text-align:left;">Author</th>
-        <th style="border:1px solid #ccc; padding:6px 12px; text-align:left;">Affiliation</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="border:1px solid #ccc; padding:6px 12px;">Paul Montesano, PhD</td>
-        <td style="border:1px solid #ccc; padding:6px 12px;">NASA Goddard Space Flight Center / Earth System Science Interdisciplinary Center, U. Maryland-College Park</td>
-      </tr>
-    </tbody>
-  </table>
+    <ul style="margin: 0; padding-left: 18px;">
+      <li>[1] Duncanson et al. (2026). <em>Remote Sensing of Environment</em>. <a href="https://doi.org/10.1016/j.rse.2026.115406" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: none;">doi:10.1016/j.rse.2026.115406</a></li>
+    </ul>
+  </section>
+
+  <footer style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
+                 padding-top: 10px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">
+    <span style="display: inline-flex; align-items: center; background-color: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 9999px; font-weight: 500; font-size: 11px;">Work in progress</span>
+    <span><strong style="color: #374151;">Contact:</strong>
+      <a href="mailto:paul.m.montesano@nasa.gov" style="color: #2563eb; text-decoration: none;">paul.m.montesano@nasa.gov</a></span>
+    <span><strong style="color: #374151;">Last updated:</strong> 2026-10-10 19:52 UTC</span>
+  </footer>
 </div>
 
-    
-    
-            <div class="folium-map" id="map_9de5b77dc714ff236c32c1f2e287f01b" ></div>
+<div class="folium-map" id="map_9de5b77dc714ff236c32c1f2e287f01b" ></div>
         
 </body>
 <script>
@@ -499,7 +529,6 @@
             );
         
     
-            tile_layer_fb31a5e0bc0eabcf5de240a57c93b26c.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
             var tile_layer_1f92b50bdb7aada9bc8b1be225954491 = L.tileLayer(
@@ -508,7 +537,6 @@
             );
         
     
-            tile_layer_1f92b50bdb7aada9bc8b1be225954491.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
             var tile_layer_eb25d3db05eab5234409a983b428c18b = L.tileLayer(
@@ -517,7 +545,6 @@
             );
         
     
-            tile_layer_eb25d3db05eab5234409a983b428c18b.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
             var tile_layer_820986fd4895b5a60d9beb3117df8eab = L.tileLayer(
@@ -535,7 +562,6 @@
             );
         
     
-            tile_layer_63a4e2cc3657ba7257442787572f245b.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
         function geo_json_8f48f6622d2439a06dbfcb76e162097d_styler(feature) {
@@ -682,7 +708,7 @@
     
     (function() {
         var map = map_9de5b77dc714ff236c32c1f2e287f01b;
-        var queryLayers = [{"section": "AGB density 2025", "name": "mean", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/a9a8784a-f7a3-4db6-be1e-92733fb7f213/point/{lon},{lat}?bidx=1", "units": "Mg/ha"}, {"section": "AGB density 2025", "name": "st dev", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/a9a8784a-f7a3-4db6-be1e-92733fb7f213/point/{lon},{lat}?bidx=2", "units": "Mg/ha"}, {"section": "AGB trend 2016\u20132025", "name": "slope (OLS)", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/2930623a-621a-4825-b830-91e523e46619/point/{lon},{lat}?bidx=1", "units": "Mg/ha/yr"}, {"section": "AGB trend 2016\u20132025", "name": "p-value (Mann\u2013Kendall)", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/2930623a-621a-4825-b830-91e523e46619/point/{lon},{lat}?bidx=7", "units": ""}, {"section": "Forest Age 2020", "name": "mean", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/1a909d38-dfce-4e3d-959f-2717dc772aed/point/{lon},{lat}?bidx=9", "units": "yr"}, {"section": "Forest Age 2020", "name": "st dev", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/1a909d38-dfce-4e3d-959f-2717dc772aed/point/{lon},{lat}?bidx=10", "units": "yr"}, {"section": "HLS NDVI Anomalies from 2025", "name": "what to call this?", "point_url": "[{'layer': <folium.raster_layers.TileLayer object at 0x7fd375224c50>, 'cmap': 'BrBG', 'min_val': -0.02, 'max_val': 0.02, 'caption': 'NDVI Trends across HLS', 'show_cbar': True}]?bidx=1", "units": "none"}];
+        var queryLayers = [{"section": "AGB density 2025", "name": "mean", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/a9a8784a-f7a3-4db6-be1e-92733fb7f213/point/{lon},{lat}?bidx=1", "units": "Mg/ha"}, {"section": "AGB density 2025", "name": "st dev", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/a9a8784a-f7a3-4db6-be1e-92733fb7f213/point/{lon},{lat}?bidx=2", "units": "Mg/ha"}, {"section": "AGB trend 2016\u20132025", "name": "slope (OLS)", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/2930623a-621a-4825-b830-91e523e46619/point/{lon},{lat}?bidx=1", "units": "Mg/ha/yr"}, {"section": "AGB trend 2016\u20132025", "name": "p-value (Mann\u2013Kendall)", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/2930623a-621a-4825-b830-91e523e46619/point/{lon},{lat}?bidx=7", "units": ""}, {"section": "Forest Age 2020", "name": "mean", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/1a909d38-dfce-4e3d-959f-2717dc772aed/point/{lon},{lat}?bidx=9", "units": "yr"}, {"section": "Forest Age 2020", "name": "st dev", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/1a909d38-dfce-4e3d-959f-2717dc772aed/point/{lon},{lat}?bidx=10", "units": "yr"}, {"section": "NDVI trend from HLS (Alaska)", "name": "slope", "point_url": "https://titiler-pgstac.maap-project.org/mosaics/2fec0901-1754-4a4d-9421-218497e1f7f8/point/{lon},{lat}?bidx=1", "units": ""}];
         var decimals = 4;
 
         map.on('click', async function(e) {
@@ -770,19 +796,15 @@
     })();
     
     
-            tile_layer_fb31a5e0bc0eabcf5de240a57c93b26c.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
-            tile_layer_1f92b50bdb7aada9bc8b1be225954491.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
-            tile_layer_eb25d3db05eab5234409a983b428c18b.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
             tile_layer_820986fd4895b5a60d9beb3117df8eab.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
-            tile_layer_63a4e2cc3657ba7257442787572f245b.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
             geo_json_8f48f6622d2439a06dbfcb76e162097d.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
@@ -791,19 +813,15 @@
             geo_json_987c44a13ca464d889dd85ccbdc76cf6.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
-            tile_layer_fb31a5e0bc0eabcf5de240a57c93b26c.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
-            tile_layer_1f92b50bdb7aada9bc8b1be225954491.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
-            tile_layer_eb25d3db05eab5234409a983b428c18b.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
             tile_layer_820986fd4895b5a60d9beb3117df8eab.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
-            tile_layer_63a4e2cc3657ba7257442787572f245b.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
             geo_json_8f48f6622d2439a06dbfcb76e162097d.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
@@ -812,19 +830,15 @@
             geo_json_987c44a13ca464d889dd85ccbdc76cf6.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
-            tile_layer_fb31a5e0bc0eabcf5de240a57c93b26c.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
-            tile_layer_1f92b50bdb7aada9bc8b1be225954491.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
-            tile_layer_eb25d3db05eab5234409a983b428c18b.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
             tile_layer_820986fd4895b5a60d9beb3117df8eab.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
-            tile_layer_63a4e2cc3657ba7257442787572f245b.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
         
     
             geo_json_8f48f6622d2439a06dbfcb76e162097d.addTo(map_9de5b77dc714ff236c32c1f2e287f01b);
