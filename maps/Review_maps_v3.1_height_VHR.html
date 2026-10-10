@@ -71,24 +71,100 @@
 </style>
 
 
-<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            max-width: 1600px; margin: 0 auto; padding: 24px 32px;">
-  <h1 style="margin-bottom: 8px;">Boreal vegetation height</h1>
-  <h3 style="margin-top: 0; color: #555; font-weight: normal;">NASA Arctic/Boreal Vulnerability Experiment (ABoVE)</h3>
-  <div style="font-size: 14px; line-height: 1.5; color: #333;">
-    <ul>
-      <li><b>Vegetation height, 2016–2025 (v3.1)</b> — annual 30 m vegetation height (m) from ICESat-2 ~ HLS modelling (Montesano et al., 2026, ORNL DAAC, https://doi.org/10.3334/ORNLDAAC/2438).</li>
-      <li><b>Vegetation height from VHR (c. 2018)</b> — 2 m vegetation height from very-high-resolution imagery. Zoom in (level 3+) to display (Montesano et al., 2026, Env. Research Letters, https://doi.org/10.1088/1748-9326/ae8e8f).</li>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 32px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            color: #1a202c;">
+
+  <!-- Main Title & Subtitle -->
+  <header style="margin-bottom: 18px;">
+    <h1 style="margin: 0 0 4px 0; font-size: 24px; font-weight: 700; color: #111827; letter-spacing: -0.02em;">
+      Boreal Vegetation Height
+    </h1>
+    <h3 style="margin: 0; font-size: 14.5px; font-weight: 500; color: #4b5563;">
+      NASA Arctic/Boreal Vulnerability Experiment (ABoVE)
+    </h3>
+  </header>
+
+  <!-- Layers Information Table -->
+  <section style="margin-bottom: 16px; overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 13.5px; text-align: left;">
+      <thead>
+        <tr style="border-bottom: 2px solid #e5e7eb; color: #374151; font-weight: 600;">
+          <th style="padding: 8px 12px; width: 26%;">Dataset / Layer</th>
+          <th style="padding: 8px 12px; width: 14%;">Resolution</th>
+          <th style="padding: 8px 12px; width: 38%;">Description &amp; Display</th>
+          <th style="padding: 8px 12px; width: 22%;">Citation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 10px 12px; font-weight: 600; color: #111827; vertical-align: top;">
+            Vegetation Height (2016&ndash;2025, v3.1)
+          </td>
+          <td style="padding: 10px 12px; color: #4b5563; vertical-align: top;">30&thinsp;m annual</td>
+          <td style="padding: 10px 12px; color: #4b5563; vertical-align: top;">
+            Annual vegetation canopy height derived from ICESat-2 ~ HLS modeling.
+          </td>
+          <td style="padding: 10px 12px; color: #6b7280; vertical-align: top;">
+            Montesano et al. (2026) [1]; Duncanson et al. (2026) [3]; Neuenschwander et al. (2024) [4]
+          </td>
+        </tr>
+        <tr style="border-bottom: 1px solid #f3f4f6;">
+          <td style="padding: 10px 12px; font-weight: 600; color: #111827; vertical-align: top;">
+            Vegetation Height from WorldView-2/3 (c. 2018)
+          </td>
+          <td style="padding: 10px 12px; color: #4b5563; vertical-align: top;">2&thinsp;m static</td>
+          <td style="padding: 10px 12px; color: #4b5563; vertical-align: top;">
+            High-resolution height across Alaska. Zoom in 
+            <span style="background-color: #f3f4f6; padding: 2px 5px; border-radius: 4px; font-family: monospace; font-size: 11.5px; color: #1f2937;">level 3+</span> to view.
+          </td>
+          <td style="padding: 10px 12px; color: #6b7280; vertical-align: top;">
+            Montesano et al. (2026) [2]
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Usage Note Callout -->
+  <p style="margin: 0 0 16px 0; padding: 9px 12px; background-color: #f8fafc; border-left: 3px solid #3b82f6; border-radius: 0 4px 4px 0; font-size: 13px; color: #475569;">
+    All height layers share one colormap and colorbar (0&ndash;10&thinsp;m). Use the layer-control panel (top right) to toggle layers; click anywhere on the map to query pixel values.
+  </p>
+
+  <!-- References Section -->
+  <section style="font-size: 11.5px; line-height: 1.5; color: #6b7280; border-top: 1px solid #f3f4f6; padding-top: 10px; margin-bottom: 14px;">
+    <div style="font-weight: 600; color: #4b5563; margin-bottom: 4px; text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.05em;">
+      References &amp; Circumpolar Context
+    </div>
+    <ul style="margin: 0; padding-left: 18px;">
+      <li>[1] Montesano et al. (2026). ORNL DAAC. <a href="https://doi.org/10.3334/ORNLDAAC/2438" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: none;">doi:10.3334/ORNLDAAC/2438</a></li>
+      <li>[2] Montesano et al. (2026). <em>Environmental Research Letters</em>. <a href="https://doi.org/10.1088/1748-9326/ae8e8f" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: none;">doi:10.1088/1748-9326/ae8e8f</a></li>
+      <li>[3] Duncanson et al. (2026). <em>Remote Sensing of Environment</em>. <a href="https://doi.org/10.1016/j.rse.2026.115406" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: none;">doi:10.1016/j.rse.2026.115406</a></li>
+      <li>[4] Neuenschwander et al. (2024). <em>Science of Remote Sensing</em>. <a href="https://doi.org/10.1016/j.srs.2024.100150" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: none;">doi:10.1016/j.srs.2024.100150</a></li>
     </ul>
-    <p>All height layers share one colormap and colorbar (0–10 m). Use the layer-control panel (top right) to toggle layers; click the map to query pixel values.</p>
-  </div>
-  <div style="display: flex; justify-content: space-between; align-items: center;
-              margin-top: 18px; padding-top: 12px; border-top: 1px solid #e0e6ee;
-              font-size: 0.85em; color: #718096;">
-    <span style="font-style: italic;">Work in progress</span>
-    <span><b>Contact:</b> <a href="mailto:paul.m.montesano@nasa.gov">paul.m.montesano@nasa.gov</a></span>
-    <span><b>Last updated:</b> 2026-10-09 19:35 UTC</span>
-  </div>
+  </section>
+
+  <!-- Metadata Footer -->
+  <footer style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
+                 padding-top: 10px; border-top: 1px solid #e5e7eb;
+                 font-size: 12px; color: #6b7280;">
+    <span style="display: inline-flex; align-items: center; background-color: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 9999px; font-weight: 500; font-size: 11px;">
+      Work in progress
+    </span>
+    <span>
+      <strong style="color: #374151;">Contact:</strong> 
+      <a href="mailto:paul.m.montesano@nasa.gov" style="color: #2563eb; text-decoration: none;">paul.m.montesano@nasa.gov</a>
+    </span>
+    <span>
+      <strong style="color: #374151;">Last updated:</strong> 2026-10-10 05:12 UTC
+    </span>
+  </footer>
+
 </div>
 
     
@@ -512,6 +588,42 @@
         });
     })();
     
+    
+            tile_layer_c1651b55a7db1c64e9fc8e8bb430e95f.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
+    
+            geo_json_0cf8e8b75a2b36001778df38d57965fa.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
+    
+            geo_json_0d23e2b457715f32e0f0c15c5ef96c7f.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
+    
+            tile_layer_c1651b55a7db1c64e9fc8e8bb430e95f.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
+    
+            geo_json_0cf8e8b75a2b36001778df38d57965fa.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
+    
+            geo_json_0d23e2b457715f32e0f0c15c5ef96c7f.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
+    
+            tile_layer_c1651b55a7db1c64e9fc8e8bb430e95f.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
+    
+            geo_json_0cf8e8b75a2b36001778df38d57965fa.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
+    
+            geo_json_0d23e2b457715f32e0f0c15c5ef96c7f.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
+    
+            tile_layer_c1651b55a7db1c64e9fc8e8bb430e95f.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
+    
+            geo_json_0cf8e8b75a2b36001778df38d57965fa.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
+    
+            geo_json_0d23e2b457715f32e0f0c15c5ef96c7f.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
+        
     
             tile_layer_c1651b55a7db1c64e9fc8e8bb430e95f.addTo(map_ec55dbccdb95e5b8c1d5eef4608891e2);
         
