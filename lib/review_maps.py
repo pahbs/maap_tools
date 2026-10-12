@@ -42,10 +42,10 @@ PEOPLE = {
     'neuenschwander': ('Amy Neuenschwander', 'U. Texas at Austin'),
 }
 
-# Opening extents for set_extent(): [[south, west], [north, east]]
+# Opening views for set_extent(): (center [lat, lon], zoom)
 EXTENTS = {
-    'na_boreal': [[48, -168], [70, -52]],      # North American boreal
-    'alaska':    [[54, -170], [71.5, -140]],
+    'na_boreal': ([60, -115], 4),     # North American boreal
+    'alaska':    ([64, -152], 5),
 }
 
 WIP = 'Work in progress'
@@ -94,23 +94,22 @@ def logos_html(logos):
     return '\n      '.join(imgs)
 
 
+SMALL_HEADING = ('font-weight: 600; color: #4b5563; margin-bottom: 4px; text-transform: uppercase; '
+                 'font-size: 10.5px; letter-spacing: 0.05em;')
+
+
 def contributors_html(contributors):
-    td = 'padding: 3px 16px 3px 0; vertical-align: top;'
-    body = '\n'.join(f'        <tr><td style="{td} color: #374151; white-space: nowrap;">{PEOPLE[k][0]}</td>'
-                     f'<td style="{td}">{PEOPLE[k][1]}</td></tr>' for k in contributors)
+    '''Compact contributors list, same type size as the references and shown beside them.'''
+    rows = '\n'.join(f'        <tr><td style="padding: 0 12px 0 0; vertical-align: top; color: #4b5563; white-space: nowrap;">'
+                     f'{PEOPLE[k][0]}</td><td style="padding: 0; vertical-align: top;">{PEOPLE[k][1]}</td></tr>'
+                     for k in contributors)
     return f'''
-  <section style="font-size: 11.5px; line-height: 1.5; color: #6b7280; border-top: 1px solid #f3f4f6; padding-top: 10px; margin-bottom: 14px;">
-    <table style="border-collapse: collapse; text-align: left;">
-      <thead>
-        <tr style="font-weight: 600; color: #4b5563; text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.05em;">
-          <th style="padding: 0 16px 4px 0;">Contributor</th><th style="padding: 0 0 4px 0;">Affiliation</th>
-        </tr>
-      </thead>
-      <tbody>
-{body}
-      </tbody>
-    </table>
-  </section>'''
+    <div style="flex: 1 1 280px; min-width: 0;">
+      <div style="{SMALL_HEADING}">Contributors</div>
+      <table style="border-collapse: collapse; text-align: left; font-size: inherit; line-height: inherit; color: inherit;">
+{rows}
+      </table>
+    </div>'''
 
 
 def build_header_html(title, subtitle, rows, note, refs, logos=('nasa',), contributors=('montesano',), contact=CONTACT):
@@ -136,15 +135,18 @@ def build_header_html(title, subtitle, rows, note, refs, logos=('nasa',), contri
             f'style="color: #2563eb; text-decoration: none;">doi:{doi}</a>' if doi else
             '<span style="color: #9ca3af; font-style: italic;">DOI pending</span>') + '</li>'
         for i, (text, doi) in enumerate(refs, 1))
-    refs_section = f'''
-  <section style="font-size: 11.5px; line-height: 1.5; color: #6b7280; border-top: 1px solid #f3f4f6; padding-top: 10px; margin-bottom: 14px;">
-    <div style="font-weight: 600; color: #4b5563; margin-bottom: 4px; text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.05em;">
-      References &amp; Circumpolar Context
-    </div>
-    <ul style="margin: 0; padding-left: 18px;">
+    refs_div = f'''
+    <div style="flex: 2 1 440px; min-width: 0;">
+      <div style="{SMALL_HEADING}">References &amp; Circumpolar Context</div>
+      <ul style="margin: 0; padding-left: 18px;">
 {ref_items}
-    </ul>
-  </section>''' if refs else ''
+      </ul>
+    </div>''' if refs else ''
+    # References and contributors side by side (they wrap to stacked on narrow screens)
+    refs_contributors = f'''
+  <section style="display: flex; flex-wrap: wrap; gap: 8px 32px; font-size: 11.5px; line-height: 1.5; color: #6b7280;
+                  border-top: 1px solid #f3f4f6; padding-top: 10px; margin-bottom: 14px;">{refs_div}{contributors_html(contributors)}
+  </section>'''
     updated = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
     return f'''
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -181,8 +183,7 @@ def build_header_html(title, subtitle, rows, note, refs, logos=('nasa',), contri
   <p style="margin: 0 0 16px 0; padding: 9px 12px; background-color: #f8fafc; border-left: 3px solid #3b82f6; border-radius: 0 4px 4px 0; font-size: 13px; color: #475569;">
     {note}
   </p>
-{refs_section}
-{contributors_html(contributors)}
+{refs_contributors}
 
   <footer style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
                  padding-top: 10px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">
@@ -237,8 +238,8 @@ def drop_layer(m, layer_name):
 
 
 def set_extent(m, extent):
-    '''Open the map fitted to a named extent in EXTENTS (e.g. 'na_boreal', 'alaska').'''
-    m.fit_bounds(EXTENTS[extent])
+    '''Open the map at a named view in EXTENTS (e.g. 'na_boreal', 'alaska').'''
+    m.location, m.options['zoom'] = EXTENTS[extent]
 
 
 def point_url(tile_layer_dict, bidx=1):
