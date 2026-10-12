@@ -24,8 +24,28 @@ LOGOS = {
     'nasa':     ('logos/nasa.png',     'NASA',                                     'https://www.nasa.gov'),
     'above':    ('logos/above.png',    'NASA Arctic-Boreal Vulnerability Experiment (ABoVE)', 'https://above.nasa.gov'),
     'umd':      ('logos/umd.png',      'University of Maryland',                   'https://umd.edu'),
+    'edgehill': ('logos/edgehill.png', 'Edge Hill University',                     'https://www.edgehill.ac.uk'),
+    'utaustin': ('logos/utaustin.png', 'The University of Texas at Austin',        'https://www.utexas.edu'),
     'abr':      ('logos/abr.png',      'ABR, Inc. Environmental Research & Services', 'https://www.abrinc.com'),
     'nasa_dsg': ('logos/nasa_dsg.svg', 'NASA Goddard Data Science Group',          'https://science.gsfc.nasa.gov/cisto/dsg/'),
+}
+
+# Contributors table entries: (name, affiliation)
+UMD_GEOG = 'Dept. Geographical Sciences, U. Maryland-College Park'
+PEOPLE = {
+    'montesano':      ('Paul Montesano', 'NASA Goddard Space Flight Center / ESSIC, U. Maryland-College Park'),
+    'duncanson':      ('Laura Duncanson', UMD_GEOG),
+    'zarringhalam':   ('Ali Zarringhalam', UMD_GEOG),
+    'minor':          ('David Minor', UMD_GEOG),
+    'thomas':         ('Nathan Thomas', 'Edge Hill University'),
+    'guenther':       ('Eric Guenther', 'U. Texas at Austin'),
+    'neuenschwander': ('Amy Neuenschwander', 'U. Texas at Austin'),
+}
+
+# Opening extents for set_extent(): [[south, west], [north, east]]
+EXTENTS = {
+    'na_boreal': [[48, -168], [70, -52]],      # North American boreal
+    'alaska':    [[54, -170], [71.5, -140]],
 }
 
 WIP = 'Work in progress'
@@ -43,6 +63,9 @@ REF_DUNCANSON = ('Duncanson et al. (2026). <em>Remote Sensing of Environment</em
 REF_MONTESANO_TTE = ('Montesano et al. (2020). <em>Environmental Research Letters</em>.', '10.1088/1748-9326/abb2c7')
 REF_CAVM = ('Walker et al. (2005). The Circumpolar Arctic vegetation map. <em>Journal of Vegetation Science</em>.',
             '10.1111/j.1654-1103.2005.tb02365.x')
+REF_MONTESANO_INPREP = ('Montesano et al. (in prep.).', None)
+REF_GAMI = ('Besnard et al. (2024). Global Age Mapping Integration (GAMI) v2.0. <em>GFZ Data Services</em>.',
+            '10.5880/GFZ.1.4.2023.006')
 
 FULLWIDTH_CSS = '''
 <style>
@@ -71,13 +94,33 @@ def logos_html(logos):
     return '\n      '.join(imgs)
 
 
-def build_header_html(title, subtitle, rows, note, refs, logos=('nasa',), contact=CONTACT):
+def contributors_html(contributors):
+    td = 'padding: 3px 16px 3px 0; vertical-align: top;'
+    body = '\n'.join(f'        <tr><td style="{td} color: #374151; white-space: nowrap;">{PEOPLE[k][0]}</td>'
+                     f'<td style="{td}">{PEOPLE[k][1]}</td></tr>' for k in contributors)
+    return f'''
+  <section style="font-size: 11.5px; line-height: 1.5; color: #6b7280; border-top: 1px solid #f3f4f6; padding-top: 10px; margin-bottom: 14px;">
+    <table style="border-collapse: collapse; text-align: left;">
+      <thead>
+        <tr style="font-weight: 600; color: #4b5563; text-transform: uppercase; font-size: 10.5px; letter-spacing: 0.05em;">
+          <th style="padding: 0 16px 4px 0;">Contributor</th><th style="padding: 0 0 4px 0;">Affiliation</th>
+        </tr>
+      </thead>
+      <tbody>
+{body}
+      </tbody>
+    </table>
+  </section>'''
+
+
+def build_header_html(title, subtitle, rows, note, refs, logos=('nasa',), contributors=('montesano',), contact=CONTACT):
     '''
     Page header for a Review map.
-    rows   : list of dicts with keys 'layer', 'resolution', 'description', 'citation', 'status' (HTML allowed);
-             status is WIP or COMPLETE
-    refs   : list of (text, doi) tuples; doi may be None
-    logos  : keys of LOGOS, shown left to right
+    rows         : list of dicts with keys 'layer', 'resolution', 'description', 'citation', 'status' (HTML allowed);
+                   status is WIP or COMPLETE
+    refs         : list of (text, doi) tuples; doi may be None
+    logos        : keys of LOGOS, shown left to right
+    contributors : keys of PEOPLE, listed in order
     '''
     td = 'padding: 10px 12px; vertical-align: top;'
     body_rows = '\n'.join(f'''        <tr style="border-bottom: 1px solid #f3f4f6;">
@@ -139,6 +182,7 @@ def build_header_html(title, subtitle, rows, note, refs, logos=('nasa',), contac
     {note}
   </p>
 {refs_section}
+{contributors_html(contributors)}
 
   <footer style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
                  padding-top: 10px; border-top: 1px solid #e5e7eb; font-size: 12px; color: #6b7280;">
@@ -190,6 +234,11 @@ def drop_layer(m, layer_name):
     for k, child in list(m._children.items()):
         if getattr(child, 'layer_name', None) == layer_name:
             del m._children[k]
+
+
+def set_extent(m, extent):
+    '''Open the map fitted to a named extent in EXTENTS (e.g. 'na_boreal', 'alaska').'''
+    m.fit_bounds(EXTENTS[extent])
 
 
 def point_url(tile_layer_dict, bidx=1):
