@@ -6,9 +6,18 @@ build_header_html(), so all maps share one look: title + logos, a dataset table 
 badge per row, a usage note, references, and a contact/last-updated footer.
 
 Logo images live in maps/logos/ and are referenced relative to the saved html (maps/*.html).
+
+save_review_map() also writes each map's overlay tile layers (XYZ urls) to maps/tile_layers.csv, published at
+https://pahbs.github.io/maap_tools/maps/tile_layers.csv for use outside the Review maps (e.g. mobile mapping apps).
+Call use_mosaic_registry(maplib_folium) before building tile layers so those urls stay the same across reruns.
 """
+import csv
+import hashlib
 import json
 import os
+import re
+import urllib.parse
+import urllib.request
 from datetime import datetime, timezone
 
 import folium
@@ -17,7 +26,15 @@ from jinja2 import Template
 
 REPO_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 MAPS_DIR = os.path.join(REPO_DIR, 'maps')
+PAGES_URL = 'https://pahbs.github.io/maap_tools/maps'
 CAVM_TREELINE_GEOJSON = os.path.join(REPO_DIR, 'data', 'cavm_treeline.geojson')
+
+# Overlay tile layers of every saved Review map, one row per layer (see update_tile_layers_csv)
+TILE_LAYERS_CSV = os.path.join(MAPS_DIR, 'tile_layers.csv')
+TILE_LAYERS_FIELDS = ['map', 'layer_name', 'xyz_url', 'min_zoom', 'max_zoom', 'west', 'south', 'east', 'north',
+                      'source', 'bidx', 'rescale', 'colormap', 'tiler', 'mosaic_id', 'map_url', 'updated_utc']
+# TiTiler mosaic registrations, keyed by mosaic json (see use_mosaic_registry)
+MOSAIC_REGISTRY_JSON = os.path.join(REPO_DIR, 'data', 'mosaic_registry.json')
 
 # key: (src relative to maps/, alt text, link)
 LOGOS = {
@@ -247,8 +264,139 @@ def point_url(tile_layer_dict, bidx=1):
     return tile_layer_dict['layer'].tiles.split('/tiles/')[0] + '/point/{lon},{lat}' + f'?bidx={bidx}'
 
 
+def _load_mosaic_registry():
+    if not os.path.exists(MOSAIC_REGISTRY_JSON):
+        return {}
+    with open(MOSAIC_REGISTRY_JSON) as f:
+        return json.load(f)
+
+
+def _get_tilejson(mosaic_links):
+    '''TileJSON of a registered mosaic, or None if TiTiler no longer serves that registration.'''
+    href = next((l['href'] for l in mosaic_links.get('links', []) if l.get('rel') == 'tilejson'), None)
+    if href is None:
+        return None
+    try:
+        with urllib.request.urlopen(href, timeout=60) as r:
+            return json.load(r)
+    except Exception:
+        return None
+
+
+def use_mosaic_registry(maplib_folium):
+    '''
+    Make maplib_folium reuse TiTiler mosaic registrations across reruns, so tile urls (in the published maps and in
+    tile_layers.csv) stay the same. A mosaic json is registered again only when its contents change or TiTiler no
+    longer serves the old registration. Registrations are kept in data/mosaic_registry.json (commit it with the maps).
+    Call once, after importing maplib_folium and before building tile layers.
+    '''
+    register = getattr(maplib_folium.register_mosaic_json_titiler, '__wrapped__',
+                       maplib_folium.register_mosaic_json_titiler)
+
+    def register_or_reuse(mosiac_json_fn, titiler_endpoint, print_info=False):
+        if isinstance(mosiac_json_fn, list):
+            return register(mosiac_json_fn, titiler_endpoint, print_info=print_info)
+        with maplib_folium.S3Backend(mosiac_json_fn) as mosaic:
+            mosaic_def = mosaic.mosaic_def.model_dump(exclude_none=True)
+        digest = hashlib.sha1(json.dumps(mosaic_def, sort_keys=True, default=str).encode()).hexdigest()
+
+        registry = _load_mosaic_registry()
+        entry = registry.get(mosiac_json_fn)
+        if entry and entry['digest'] == digest and entry['titiler_endpoint'] == titiler_endpoint:
+            if _get_tilejson(entry['mosaic_links']) is not None:
+                print(f"Reusing mosaic {entry['mosaic_id']} (registered {entry['registered_utc']}): {mosiac_json_fn}")
+                return entry['mosaic_links']
+
+        mosaic_links = register(mosiac_json_fn, titiler_endpoint, print_info=print_info)
+        tilejson = _get_tilejson(mosaic_links)
+        if tilejson is None:
+            return mosaic_links   # registration failed: leave the registry alone, maplib_folium reports the error
+        registry[mosiac_json_fn] = {
+            'mosaic_id': re.search(r'/mosaics/([^/]+)/', tilejson['tiles'][0]).group(1),
+            'mosaic_links': mosaic_links,
+            'digest': digest,
+            'titiler_endpoint': titiler_endpoint,
+            'minzoom': tilejson.get('minzoom'),
+            'maxzoom': tilejson.get('maxzoom'),
+            'bounds': tilejson.get('bounds'),
+            'registered_utc': datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC'),
+        }
+        with open(MOSAIC_REGISTRY_JSON, 'w') as f:
+            json.dump(registry, f, indent=1, sort_keys=True)
+        return mosaic_links
+
+    register_or_reuse.__wrapped__ = register
+    maplib_folium.register_mosaic_json_titiler = register_or_reuse
+
+
+def _overlay_tile_layers(element):
+    '''Overlay (non-basemap) folium TileLayers in a map, in the order they were added.'''
+    for child in element._children.values():
+        if isinstance(child, folium.TileLayer) and child.overlay:
+            yield child
+        yield from _overlay_tile_layers(child)
+
+
+def tile_layer_rows(m, map_name):
+    '''One tile_layers.csv row per overlay tile layer in folium map m.'''
+    by_mosaic_id = {v['mosaic_id']: (k, v) for k, v in _load_mosaic_registry().items()}
+    updated = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+    rows = []
+    for layer in _overlay_tile_layers(m):
+        url = urllib.parse.urlsplit(layer.tiles)
+        params = dict(urllib.parse.parse_qsl(url.query))
+        mosaic_id = re.search(r'/mosaics/([^/]+)/tiles/', url.path)
+        mosaic_id = mosaic_id.group(1) if mosaic_id else ''
+        source, entry = by_mosaic_id.get(mosaic_id, ('', {}))
+        collection = re.search(r'/collections/([^/]+)/', url.path)
+        if collection:
+            source = f'STAC collection {collection.group(1)}'
+        # folium option keys are camelCase or snake_case depending on the folium version
+        opts = layer.options
+        min_zoom = opts.get('minZoom', opts.get('min_zoom')) or entry.get('minzoom') or 0
+        max_zoom = entry.get('maxzoom') or opts.get('maxZoom', opts.get('max_zoom'))
+        bounds = entry.get('bounds')
+        if not bounds and opts.get('bounds'):
+            (s, w), (n, e) = opts['bounds']
+            bounds = [w, s, e, n]
+        rows.append({
+            'map': map_name,
+            'layer_name': layer.layer_name,
+            'xyz_url': layer.tiles,
+            'min_zoom': min_zoom,
+            'max_zoom': max_zoom,
+            **dict(zip(['west', 'south', 'east', 'north'], [round(b, 4) for b in bounds] if bounds else [''] * 4)),
+            'source': source,
+            'bidx': params.get('bidx') or params.get('assets', '').partition('bidx=')[2],
+            'rescale': params.get('rescale', ''),
+            'colormap': params.get('colormap_name') or ('custom' if 'colormap' in params else ''),
+            'tiler': url.netloc,
+            'mosaic_id': mosaic_id,
+            'map_url': f'{PAGES_URL}/{map_name}',
+            'updated_utc': updated,
+        })
+    return rows
+
+
+def update_tile_layers_csv(m, out_html):
+    '''Replace this map's rows in maps/tile_layers.csv with its current overlay tile layers; other maps' rows are kept.'''
+    map_name = os.path.basename(out_html)
+    rows = []
+    if os.path.exists(TILE_LAYERS_CSV):
+        with open(TILE_LAYERS_CSV, newline='') as f:
+            rows = [r for r in csv.DictReader(f) if r['map'] != map_name]
+    new_rows = tile_layer_rows(m, map_name)
+    rows = sorted(rows + new_rows, key=lambda r: r['map'])   # stable: layer order kept within each map
+    with open(TILE_LAYERS_CSV, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=TILE_LAYERS_FIELDS)
+        writer.writeheader()
+        writer.writerows(rows)
+    print(f"Wrote {len(new_rows)} tile layers for {map_name} to {TILE_LAYERS_CSV}")
+    print(f"  {PAGES_URL}/{os.path.basename(TILE_LAYERS_CSV)}")
+
+
 def save_review_map(m, out_html, header_html):
-    '''Save the folium map and insert the page css + header at the top of <body>.'''
+    '''Save the folium map, insert the page css + header at the top of <body>, and update maps/tile_layers.csv.'''
     m.save(out_html)
     with open(out_html, 'r') as f:
         html = f.read()
@@ -256,4 +404,5 @@ def save_review_map(m, out_html, header_html):
     with open(out_html, 'w') as f:
         f.write(html)
     print(f"Saved {out_html} — push to GitHub to view at:")
-    print(f"  https://pahbs.github.io/maap_tools/maps/{os.path.basename(out_html)}")
+    print(f"  {PAGES_URL}/{os.path.basename(out_html)}")
+    update_tile_layers_csv(m, out_html)
