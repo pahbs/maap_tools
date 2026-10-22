@@ -1,0 +1,1276 @@
+{
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/AGB_H30_2016/full_run_niter30_multiyear_atl08v6/AGB_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "fb4644d64d4769f960be22fe1c3f4cd414475076",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "cfe2151a-adc0-4a4f-9011-51eea4a3c292",
+  "mosaic_links": {
+   "id": "cfe2151a-adc0-4a4f-9011-51eea4a3c292",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/cfe2151a-adc0-4a4f-9011-51eea4a3c292",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/cfe2151a-adc0-4a4f-9011-51eea4a3c292/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/cfe2151a-adc0-4a4f-9011-51eea4a3c292/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/cfe2151a-adc0-4a4f-9011-51eea4a3c292/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/cfe2151a-adc0-4a4f-9011-51eea4a3c292/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:25 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/AGB_H30_2017/full_run_niter30_multiyear_atl08v6/AGB_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "43edc257993cb943c6322aa04de3ea2bee486074",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "5653166b-67c3-44a6-8ef0-648f62abb1cc",
+  "mosaic_links": {
+   "id": "5653166b-67c3-44a6-8ef0-648f62abb1cc",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/5653166b-67c3-44a6-8ef0-648f62abb1cc",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/5653166b-67c3-44a6-8ef0-648f62abb1cc/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/5653166b-67c3-44a6-8ef0-648f62abb1cc/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/5653166b-67c3-44a6-8ef0-648f62abb1cc/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/5653166b-67c3-44a6-8ef0-648f62abb1cc/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:25 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/AGB_H30_2018/full_run_niter30_multiyear_atl08v6/AGB_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "b5d75cca68d8b0351307c3f279e95084a36b0b10",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "29387eb0-c8b0-4ace-9cd1-e9ad7c584e77",
+  "mosaic_links": {
+   "id": "29387eb0-c8b0-4ace-9cd1-e9ad7c584e77",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/29387eb0-c8b0-4ace-9cd1-e9ad7c584e77",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/29387eb0-c8b0-4ace-9cd1-e9ad7c584e77/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/29387eb0-c8b0-4ace-9cd1-e9ad7c584e77/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/29387eb0-c8b0-4ace-9cd1-e9ad7c584e77/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/29387eb0-c8b0-4ace-9cd1-e9ad7c584e77/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:25 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/AGB_H30_2019/full_run_niter30_multiyear_atl08v6/AGB_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "88fe8e390dd098b71ca8e13c9abf0dabe02a28a9",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "7f7c7600-1024-4c54-ac8b-3bde6f063d80",
+  "mosaic_links": {
+   "id": "7f7c7600-1024-4c54-ac8b-3bde6f063d80",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/7f7c7600-1024-4c54-ac8b-3bde6f063d80",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/7f7c7600-1024-4c54-ac8b-3bde6f063d80/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/7f7c7600-1024-4c54-ac8b-3bde6f063d80/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/7f7c7600-1024-4c54-ac8b-3bde6f063d80/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/7f7c7600-1024-4c54-ac8b-3bde6f063d80/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:25 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/AGB_H30_2020/full_run_niter30_multiyear_atl08v6/AGB_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "d8ece621a2b22e0ca83576dc392bf9e93bd1c9eb",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "8c140dc6-2ee7-495d-a83b-a0d4628133dc",
+  "mosaic_links": {
+   "id": "8c140dc6-2ee7-495d-a83b-a0d4628133dc",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/8c140dc6-2ee7-495d-a83b-a0d4628133dc",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/8c140dc6-2ee7-495d-a83b-a0d4628133dc/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/8c140dc6-2ee7-495d-a83b-a0d4628133dc/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/8c140dc6-2ee7-495d-a83b-a0d4628133dc/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/8c140dc6-2ee7-495d-a83b-a0d4628133dc/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:25 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/AGB_H30_2021/full_run_niter30_multiyear_atl08v6/AGB_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "3ee003612430feaa7ce5639d269b6e7356ff4fac",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "dfbe88b0-88c6-44c8-85b7-27bb6f9251c6",
+  "mosaic_links": {
+   "id": "dfbe88b0-88c6-44c8-85b7-27bb6f9251c6",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/dfbe88b0-88c6-44c8-85b7-27bb6f9251c6",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/dfbe88b0-88c6-44c8-85b7-27bb6f9251c6/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/dfbe88b0-88c6-44c8-85b7-27bb6f9251c6/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/dfbe88b0-88c6-44c8-85b7-27bb6f9251c6/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/dfbe88b0-88c6-44c8-85b7-27bb6f9251c6/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:25 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/AGB_H30_2022/full_run_niter30_multiyear_atl08v6/AGB_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "8a4d691397b2aa83f47d8d29d01c91ed893ed948",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "1b9ba10d-bdad-4750-9cda-c2ec820a3aa9",
+  "mosaic_links": {
+   "id": "1b9ba10d-bdad-4750-9cda-c2ec820a3aa9",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/1b9ba10d-bdad-4750-9cda-c2ec820a3aa9",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/1b9ba10d-bdad-4750-9cda-c2ec820a3aa9/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/1b9ba10d-bdad-4750-9cda-c2ec820a3aa9/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/1b9ba10d-bdad-4750-9cda-c2ec820a3aa9/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/1b9ba10d-bdad-4750-9cda-c2ec820a3aa9/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:25 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/AGB_H30_2023/full_run_niter30_multiyear_atl08v6/AGB_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "67df059c868446f6ba23fd82b1434b2b895fa4d3",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "cba2c5c7-5ee0-4366-baec-31617a8b2476",
+  "mosaic_links": {
+   "id": "cba2c5c7-5ee0-4366-baec-31617a8b2476",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/cba2c5c7-5ee0-4366-baec-31617a8b2476",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/cba2c5c7-5ee0-4366-baec-31617a8b2476/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/cba2c5c7-5ee0-4366-baec-31617a8b2476/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/cba2c5c7-5ee0-4366-baec-31617a8b2476/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/cba2c5c7-5ee0-4366-baec-31617a8b2476/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:25 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/AGB_H30_2024/full_run_niter30_multiyear_atl08v6/AGB_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "fcad50c0c77446e960c6e1cf17f9407f34b5bbce",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "65d68910-caf3-43d8-9cb8-1d6fb7a0bcb9",
+  "mosaic_links": {
+   "id": "65d68910-caf3-43d8-9cb8-1d6fb7a0bcb9",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/65d68910-caf3-43d8-9cb8-1d6fb7a0bcb9",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/65d68910-caf3-43d8-9cb8-1d6fb7a0bcb9/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/65d68910-caf3-43d8-9cb8-1d6fb7a0bcb9/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/65d68910-caf3-43d8-9cb8-1d6fb7a0bcb9/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/65d68910-caf3-43d8-9cb8-1d6fb7a0bcb9/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:25 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/Ht_H30_2016/full_run_niter30_multiyear_atl08v6/HT_tindex_master_mosaic.json": {
+  "bounds": [
+   -168.41421226181586,
+   37.88499920118907,
+   169.77789631013272,
+   73.2524590367921
+  ],
+  "digest": "579545e339742aff15f0648b129e6769273f5cbd",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "abc8bc29-c334-4689-aca8-5d4682e5f1ff",
+  "mosaic_links": {
+   "id": "abc8bc29-c334-4689-aca8-5d4682e5f1ff",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/abc8bc29-c334-4689-aca8-5d4682e5f1ff",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/abc8bc29-c334-4689-aca8-5d4682e5f1ff/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/abc8bc29-c334-4689-aca8-5d4682e5f1ff/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/abc8bc29-c334-4689-aca8-5d4682e5f1ff/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/abc8bc29-c334-4689-aca8-5d4682e5f1ff/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:28 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/Ht_H30_2017/full_run_niter30_multiyear_atl08v6/HT_tindex_master_mosaic.json": {
+  "bounds": [
+   -168.41421226181586,
+   37.88499920118907,
+   169.77789631013272,
+   73.2524590367921
+  ],
+  "digest": "604402ce2aebc0bb34d6ba7748f1f48fa131c8d5",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "4440afe3-89fa-4bb3-afae-87a7ed458570",
+  "mosaic_links": {
+   "id": "4440afe3-89fa-4bb3-afae-87a7ed458570",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/4440afe3-89fa-4bb3-afae-87a7ed458570",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/4440afe3-89fa-4bb3-afae-87a7ed458570/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/4440afe3-89fa-4bb3-afae-87a7ed458570/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/4440afe3-89fa-4bb3-afae-87a7ed458570/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/4440afe3-89fa-4bb3-afae-87a7ed458570/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:28 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/Ht_H30_2018/full_run_niter30_multiyear_atl08v6/HT_tindex_master_mosaic.json": {
+  "bounds": [
+   -168.41421226181586,
+   37.88499920118907,
+   169.77789631013272,
+   73.2524590367921
+  ],
+  "digest": "f79fff856e9967153b083afd4a445e3122359176",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "29d1406d-3990-4a13-8916-5865dd7bcff2",
+  "mosaic_links": {
+   "id": "29d1406d-3990-4a13-8916-5865dd7bcff2",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/29d1406d-3990-4a13-8916-5865dd7bcff2",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/29d1406d-3990-4a13-8916-5865dd7bcff2/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/29d1406d-3990-4a13-8916-5865dd7bcff2/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/29d1406d-3990-4a13-8916-5865dd7bcff2/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/29d1406d-3990-4a13-8916-5865dd7bcff2/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:28 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/Ht_H30_2019/full_run_niter30_multiyear_atl08v6/HT_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "7d75c519d2a5a095a48c986a8612eb8aa1ec50fe",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "97605779-2109-401d-811c-7cfc90ec33f7",
+  "mosaic_links": {
+   "id": "97605779-2109-401d-811c-7cfc90ec33f7",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/97605779-2109-401d-811c-7cfc90ec33f7",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/97605779-2109-401d-811c-7cfc90ec33f7/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/97605779-2109-401d-811c-7cfc90ec33f7/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/97605779-2109-401d-811c-7cfc90ec33f7/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/97605779-2109-401d-811c-7cfc90ec33f7/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:28 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/Ht_H30_2020/full_run_niter30_multiyear_atl08v6/HT_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "7d8ab2d0600c903fc6f89370d01e342ad7f4a40a",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "d6d642ee-3f3b-4f77-a18a-a16796bfd8e0",
+  "mosaic_links": {
+   "id": "d6d642ee-3f3b-4f77-a18a-a16796bfd8e0",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/d6d642ee-3f3b-4f77-a18a-a16796bfd8e0",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/d6d642ee-3f3b-4f77-a18a-a16796bfd8e0/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/d6d642ee-3f3b-4f77-a18a-a16796bfd8e0/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/d6d642ee-3f3b-4f77-a18a-a16796bfd8e0/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/d6d642ee-3f3b-4f77-a18a-a16796bfd8e0/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:28 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/Ht_H30_2021/full_run_niter30_multiyear_atl08v6/HT_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "b37a26f114b2baca1b92ae3da7a4f3db471547eb",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "6210f823-4c06-4b93-875b-b2df92f1ea1f",
+  "mosaic_links": {
+   "id": "6210f823-4c06-4b93-875b-b2df92f1ea1f",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/6210f823-4c06-4b93-875b-b2df92f1ea1f",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/6210f823-4c06-4b93-875b-b2df92f1ea1f/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/6210f823-4c06-4b93-875b-b2df92f1ea1f/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/6210f823-4c06-4b93-875b-b2df92f1ea1f/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/6210f823-4c06-4b93-875b-b2df92f1ea1f/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:28 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/Ht_H30_2022/full_run_niter30_multiyear_atl08v6/HT_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "6f4c5433e4d9c3f3929d1e5c621cef7117151418",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "91cfe0e2-2bab-4dd4-9929-7b1bcb89ef5c",
+  "mosaic_links": {
+   "id": "91cfe0e2-2bab-4dd4-9929-7b1bcb89ef5c",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/91cfe0e2-2bab-4dd4-9929-7b1bcb89ef5c",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/91cfe0e2-2bab-4dd4-9929-7b1bcb89ef5c/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/91cfe0e2-2bab-4dd4-9929-7b1bcb89ef5c/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/91cfe0e2-2bab-4dd4-9929-7b1bcb89ef5c/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/91cfe0e2-2bab-4dd4-9929-7b1bcb89ef5c/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:28 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/Ht_H30_2023/full_run_niter30_multiyear_atl08v6/HT_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "382e4d852e012eef633115e4d99d2ca86c4af0ef",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "7bd98676-c4b7-4349-b68d-853121c17d56",
+  "mosaic_links": {
+   "id": "7bd98676-c4b7-4349-b68d-853121c17d56",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/7bd98676-c4b7-4349-b68d-853121c17d56",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/7bd98676-c4b7-4349-b68d-853121c17d56/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/7bd98676-c4b7-4349-b68d-853121c17d56/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/7bd98676-c4b7-4349-b68d-853121c17d56/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/7bd98676-c4b7-4349-b68d-853121c17d56/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:28 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/Ht_H30_2024/full_run_niter30_multiyear_atl08v6/HT_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "5b32a157e943c6f6acfd10c63a08eb95c687e430",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "e59a198b-fa37-431d-81fb-3cc7d4b43b58",
+  "mosaic_links": {
+   "id": "e59a198b-fa37-431d-81fb-3cc7d4b43b58",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/e59a198b-fa37-431d-81fb-3cc7d4b43b58",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/e59a198b-fa37-431d-81fb-3cc7d4b43b58/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/e59a198b-fa37-431d-81fb-3cc7d4b43b58/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/e59a198b-fa37-431d-81fb-3cc7d4b43b58/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/e59a198b-fa37-431d-81fb-3cc7d4b43b58/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:28 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/BOREAL_MAP/v3.1.0/Ht_H30_2025/full_run_niter30_multiyear_atl08v6/HT_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.81819396174362,
+   35.80632446895021,
+   178.39934684769466,
+   78.53132756237311
+  ],
+  "digest": "83f1f7d020b589d0ae788d701f091f4ff025aa1c",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "8f990d55-3f97-4756-a8b3-1949180e387b",
+  "mosaic_links": {
+   "id": "8f990d55-3f97-4756-a8b3-1949180e387b",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/8f990d55-3f97-4756-a8b3-1949180e387b",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/8f990d55-3f97-4756-a8b3-1949180e387b/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/8f990d55-3f97-4756-a8b3-1949180e387b/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/8f990d55-3f97-4756-a8b3-1949180e387b/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/8f990d55-3f97-4756-a8b3-1949180e387b/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:28 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/CACC/carbon_accumulation_v3/CACC_2020_v3.1_multiyr_nsims050/CACC_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   35.80632446895021,
+   179.99999,
+   78.53132756237311
+  ],
+  "digest": "581e004427183d70902ee8bac7e4a5e861344e16",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "f5beedb7-4aeb-4016-bd68-3a5ec5cdba8e",
+  "mosaic_links": {
+   "id": "f5beedb7-4aeb-4016-bd68-3a5ec5cdba8e",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/f5beedb7-4aeb-4016-bd68-3a5ec5cdba8e",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/f5beedb7-4aeb-4016-bd68-3a5ec5cdba8e/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/f5beedb7-4aeb-4016-bd68-3a5ec5cdba8e/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/f5beedb7-4aeb-4016-bd68-3a5ec5cdba8e/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/f5beedb7-4aeb-4016-bd68-3a5ec5cdba8e/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:26 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/TRENDCLASS/compute_trends_ols_v3/AGB_v3.1_multiyr_2016-2025/TRENDCLASS_tindex_master_mosaic.json": {
+  "bounds": [
+   -168.08033084855822,
+   43.70498917081278,
+   171.83877042151565,
+   72.10435179037718
+  ],
+  "digest": "229601c9b1a4d1c4e29950fc27136466d5e565a3",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "62fa653a-c317-4b1b-b96d-61b1e270ad38",
+  "mosaic_links": {
+   "id": "62fa653a-c317-4b1b-b96d-61b1e270ad38",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/62fa653a-c317-4b1b-b96d-61b1e270ad38",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/62fa653a-c317-4b1b-b96d-61b1e270ad38/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/62fa653a-c317-4b1b-b96d-61b1e270ad38/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/62fa653a-c317-4b1b-b96d-61b1e270ad38/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/62fa653a-c317-4b1b-b96d-61b1e270ad38/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:26 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/TRENDCLASS/compute_trends_ols_v3/AGB_v3.1_multiyr_2020-2025/TRENDCLASS_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   43.70498917081278,
+   179.99999,
+   75.94119008920045
+  ],
+  "digest": "7c26dfddeb6d46642e456d1c80e81d69f6386f1b",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "fe331ed0-b950-436c-b6a4-e4ec136a83a6",
+  "mosaic_links": {
+   "id": "fe331ed0-b950-436c-b6a4-e4ec136a83a6",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/fe331ed0-b950-436c-b6a4-e4ec136a83a6",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/fe331ed0-b950-436c-b6a4-e4ec136a83a6/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/fe331ed0-b950-436c-b6a4-e4ec136a83a6/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/fe331ed0-b950-436c-b6a4-e4ec136a83a6/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/fe331ed0-b950-436c-b6a4-e4ec136a83a6/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:33 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/TRENDNDVI_SLOPE/main/TRENDNDVI_SLOPE_tindex_master_mosaic.json": {
+  "bounds": [
+   -180.0,
+   51.0,
+   -129.0,
+   72.0
+  ],
+  "digest": "58ef02248af25ed3a5455a14a17a76859ae9fa12",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "2108adfa-df2b-470e-ac6d-4d6a2cd5bb83",
+  "mosaic_links": {
+   "id": "2108adfa-df2b-470e-ac6d-4d6a2cd5bb83",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/2108adfa-df2b-470e-ac6d-4d6a2cd5bb83",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/2108adfa-df2b-470e-ac6d-4d6a2cd5bb83/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/2108adfa-df2b-470e-ac6d-4d6a2cd5bb83/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/2108adfa-df2b-470e-ac6d-4d6a2cd5bb83/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/2108adfa-df2b-470e-ac6d-4d6a2cd5bb83/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:30 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/TRENDOLS/compute_trends_ols_v3/AGB_v3.1_multiyr_2016-2025/TRENDOLS_tindex_master_mosaic.json": {
+  "bounds": [
+   -168.08033084855822,
+   43.70498917081278,
+   171.83877042151565,
+   72.10435179037718
+  ],
+  "digest": "8526eef194df39c63b269f64c77158641e0cd160",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "0bddaabc-a1e9-4d52-8f38-80d6e4a344e9",
+  "mosaic_links": {
+   "id": "0bddaabc-a1e9-4d52-8f38-80d6e4a344e9",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/0bddaabc-a1e9-4d52-8f38-80d6e4a344e9",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/0bddaabc-a1e9-4d52-8f38-80d6e4a344e9/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/0bddaabc-a1e9-4d52-8f38-80d6e4a344e9/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/0bddaabc-a1e9-4d52-8f38-80d6e4a344e9/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/0bddaabc-a1e9-4d52-8f38-80d6e4a344e9/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:26 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/TRENDOLS/compute_trends_ols_v3/AGB_v3.1_multiyr_2020-2025/TRENDOLS_tindex_master_mosaic.json": {
+  "bounds": [
+   -179.99999,
+   43.70498917081278,
+   179.99999,
+   75.94119008920045
+  ],
+  "digest": "cfc8ebef7005599c199de6e4cc5973bfc5f21e97",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "62235088-37a3-48fb-950a-3dcf762810a2",
+  "mosaic_links": {
+   "id": "62235088-37a3-48fb-950a-3dcf762810a2",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/62235088-37a3-48fb-950a-3dcf762810a2",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/62235088-37a3-48fb-950a-3dcf762810a2/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/62235088-37a3-48fb-950a-3dcf762810a2/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/62235088-37a3-48fb-950a-3dcf762810a2/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/62235088-37a3-48fb-950a-3dcf762810a2/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:33 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ },
+ "s3://maap-ops-workspace/shared/montesano/DPS_tile_lists/TTE/download_gee_tiles_v1/tte_montesano_2010_30m/TTE_tindex_master_mosaic.json": {
+  "bounds": [
+   -180.00041666666667,
+   45.000138888888884,
+   179.99979166666665,
+   75.00013888888888
+  ],
+  "digest": "5466f68bd9a0bac8ce3cd60d12fe5eb4ccca303c",
+  "maxzoom": 18,
+  "minzoom": 6,
+  "mosaic_id": "e72e0434-bb00-44f5-8b1d-5b577193a220",
+  "mosaic_links": {
+   "id": "e72e0434-bb00-44f5-8b1d-5b577193a220",
+   "links": [
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/e72e0434-bb00-44f5-8b1d-5b577193a220",
+     "rel": "self",
+     "title": "Self",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/e72e0434-bb00-44f5-8b1d-5b577193a220/mosaicjson",
+     "rel": "mosaicjson",
+     "title": "MosaicJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/e72e0434-bb00-44f5-8b1d-5b577193a220/WebMercatorQuad/tilejson.json",
+     "rel": "tilejson",
+     "title": "TileJSON",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/e72e0434-bb00-44f5-8b1d-5b577193a220/tiles/WebMercatorQuad/{z}/{x}/{y}",
+     "rel": "tiles",
+     "title": "Tiles",
+     "type": "application/json"
+    },
+    {
+     "href": "https://titiler-pgstac.maap-project.org/mosaics/e72e0434-bb00-44f5-8b1d-5b577193a220/WMTSCapabilities.xml",
+     "rel": "wmts",
+     "title": "WMTS",
+     "type": "application/json"
+    }
+   ]
+  },
+  "registered_utc": "2026-10-22 21:25 UTC",
+  "titiler_endpoint": "https://titiler.maap-project.org"
+ }
+}
