@@ -21,6 +21,7 @@ import urllib.request
 from datetime import datetime, timezone
 
 import folium
+from cogeo_mosaic.backends import MosaicBackend
 from folium import MacroElement
 from jinja2 import Template
 
@@ -35,6 +36,13 @@ TILE_LAYERS_FIELDS = ['map', 'layer_name', 'xyz_url', 'min_zoom', 'max_zoom', 'w
                       'source', 'bidx', 'rescale', 'colormap', 'tiler', 'mosaic_id', 'map_url', 'updated_utc']
 # TiTiler mosaic registrations, keyed by mosaic json (see use_mosaic_registry)
 MOSAIC_REGISTRY_JSON = os.path.join(REPO_DIR, 'data', 'mosaic_registry.json')
+
+# MAAP Hub: my public bucket is mounted here, so these files are read without S3 credentials
+PUBLIC_BUCKET_S3 = 's3://maap-ops-workspace/shared/montesano'
+PUBLIC_BUCKET_MOUNT = os.path.expanduser('~/my-public-bucket')
+BOREAL_TILES_GPKG = os.path.join(PUBLIC_BUCKET_MOUNT, 'databank', 'boreal_tiles_v004_model_ready.gpkg')
+# Boreal extent from WWF ecoregions, for MAP_REGISTERED_DPS_RESULTS(ecoboreal_geojson=...)
+ECOBOREAL_GEOJSON = os.path.join(REPO_DIR, 'data', 'wwf_circumboreal_dissolve.geojson')
 
 # key: (src relative to maps/, alt text, link)
 LOGOS = {
@@ -283,6 +291,14 @@ def _get_tilejson(mosaic_links):
         return None
 
 
+def _mosaic_backend(mosaic_json_fn, maplib_folium):
+    '''Backend for a mosaic json: through the public bucket mount if it is there, otherwise from S3.'''
+    mounted = mosaic_json_fn.replace(PUBLIC_BUCKET_S3, PUBLIC_BUCKET_MOUNT)
+    if os.path.exists(mounted):
+        return MosaicBackend(mounted)
+    return maplib_folium.S3Backend(mosaic_json_fn)
+
+
 def use_mosaic_registry(maplib_folium):
     '''
     Make maplib_folium reuse TiTiler mosaic registrations across reruns, so tile urls (in the published maps and in
@@ -296,7 +312,7 @@ def use_mosaic_registry(maplib_folium):
     def register_or_reuse(mosiac_json_fn, titiler_endpoint, print_info=False):
         if isinstance(mosiac_json_fn, list):
             return register(mosiac_json_fn, titiler_endpoint, print_info=print_info)
-        with maplib_folium.S3Backend(mosiac_json_fn) as mosaic:
+        with _mosaic_backend(mosiac_json_fn, maplib_folium) as mosaic:
             mosaic_def = mosaic.mosaic_def.model_dump(exclude_none=True)
         digest = hashlib.sha1(json.dumps(mosaic_def, sort_keys=True, default=str).encode()).hexdigest()
 
