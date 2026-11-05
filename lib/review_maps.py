@@ -65,6 +65,7 @@ PEOPLE = {
     'thomas':         ('Nathan Thomas', 'Edge Hill University'),
     'guenther':       ('Eric Guenther', 'U. Texas at Austin'),
     'neuenschwander': ('Amy Neuenschwander', 'U. Texas at Austin'),
+    'shinde':         ('Rajat Shinde', 'Earth System Science Center, U. Alabama in Huntsville'),
 }
 
 # Opening views for set_extent(): (center [lat, lon], zoom)
@@ -89,6 +90,7 @@ REF_MONTESANO_TTE = ('Montesano et al. (2020). <em>Environmental Research Letter
 REF_CAVM = ('Walker et al. (2005). The Circumpolar Arctic vegetation map. <em>Journal of Vegetation Science</em>.',
             '10.1111/j.1654-1103.2005.tb02365.x')
 REF_MONTESANO_INPREP = ('Montesano et al. (in prep.).', None)
+REF_SHINDE_INPREP = ('Shinde et al. (in prep.).', None)
 REF_GAMI = ('Besnard et al. (2024). Global Age Mapping Integration (GAMI) v2.0. <em>GFZ Data Services</em>.',
             '10.5880/GFZ.1.4.2023.006')
 
