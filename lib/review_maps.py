@@ -37,9 +37,12 @@ TILE_LAYERS_FIELDS = ['map', 'layer_name', 'xyz_url', 'min_zoom', 'max_zoom', 'w
 # TiTiler mosaic registrations, keyed by mosaic json (see use_mosaic_registry)
 MOSAIC_REGISTRY_JSON = os.path.join(REPO_DIR, 'data', 'mosaic_registry.json')
 
-# MAAP Hub: my public bucket is mounted here, so these files are read without S3 credentials
-PUBLIC_BUCKET_S3 = 's3://maap-ops-workspace/shared/montesano'
+# MAAP Hub: buckets are mounted, so these files are read without S3 credentials. s3 prefix: mount, most specific first
 PUBLIC_BUCKET_MOUNT = os.path.expanduser('~/my-public-bucket')
+S3_MOUNTS = {
+    's3://maap-ops-workspace/shared/montesano': PUBLIC_BUCKET_MOUNT,
+    's3://maap-ops-workspace/shared': os.path.expanduser('~/shared-buckets'),
+}
 BOREAL_TILES_GPKG = os.path.join(PUBLIC_BUCKET_MOUNT, 'databank', 'boreal_tiles_v004_model_ready.gpkg')
 # Boreal extent from WWF ecoregions, for MAP_REGISTERED_DPS_RESULTS(ecoboreal_geojson=...)
 ECOBOREAL_GEOJSON = os.path.join(REPO_DIR, 'data', 'wwf_circumboreal_dissolve.geojson')
@@ -293,12 +296,13 @@ def _get_tilejson(mosaic_links):
         return None
 
 
-def _mosaic_backend(mosaic_json_fn, maplib_folium):
-    '''Backend for a mosaic json: through the public bucket mount if it is there, otherwise from S3.'''
-    mounted = mosaic_json_fn.replace(PUBLIC_BUCKET_S3, PUBLIC_BUCKET_MOUNT)
-    if os.path.exists(mounted):
-        return MosaicBackend(mounted)
-    return maplib_folium.S3Backend(mosaic_json_fn)
+def mounted_path(s3_path):
+    '''Local path of an s3 file through the Hub bucket mounts, or None if it isn't there.'''
+    for prefix, mount in S3_MOUNTS.items():
+        if s3_path.startswith(prefix + '/'):
+            path = mount + s3_path[len(prefix):]
+            return path if os.path.exists(path) else None
+    return None
 
 
 def use_mosaic_registry(maplib_folium):
@@ -306,15 +310,25 @@ def use_mosaic_registry(maplib_folium):
     Make maplib_folium reuse TiTiler mosaic registrations across reruns, so tile urls (in the published maps and in
     tile_layers.csv) stay the same. A mosaic json is registered again only when its contents change or TiTiler no
     longer serves the old registration. Registrations are kept in data/mosaic_registry.json (commit it with the maps).
+    Mosaic jsons are read through the bucket mounts when they can be, so no S3 credentials are needed.
     Call once, after importing maplib_folium and before building tile layers.
     '''
+    s3_backend = getattr(maplib_folium.S3Backend, '__wrapped__', maplib_folium.S3Backend)
+
+    def mosaic_backend(mosaic_json_fn, *args, **kwargs):
+        mounted = mounted_path(mosaic_json_fn)
+        return MosaicBackend(mounted) if mounted else s3_backend(mosaic_json_fn, *args, **kwargs)
+
+    mosaic_backend.__wrapped__ = s3_backend
+    maplib_folium.S3Backend = mosaic_backend
+
     register = getattr(maplib_folium.register_mosaic_json_titiler, '__wrapped__',
                        maplib_folium.register_mosaic_json_titiler)
 
     def register_or_reuse(mosiac_json_fn, titiler_endpoint, print_info=False):
         if isinstance(mosiac_json_fn, list):
             return register(mosiac_json_fn, titiler_endpoint, print_info=print_info)
-        with _mosaic_backend(mosiac_json_fn, maplib_folium) as mosaic:
+        with maplib_folium.S3Backend(mosiac_json_fn) as mosaic:
             mosaic_def = mosaic.mosaic_def.model_dump(exclude_none=True)
         digest = hashlib.sha1(json.dumps(mosaic_def, sort_keys=True, default=str).encode()).hexdigest()
 
